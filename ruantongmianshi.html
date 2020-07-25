@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function find(str) {
+      var stringArray = str;
+      var obj = {}
+      var ind = []
+      for (let i = 0; i < stringArray.length; i++) {
+        if (obj[stringArray[i]] === undefined) {
+          obj[stringArray[i]] = 1
+        } else {
+          obj[stringArray[i]]++
+        }
+      }
+      var max = '';
+      var max_num = 0;
+      for (key in obj) {
+        if (obj[key] > max_num) {
+          max = key
+          max_num = obj[key]
+        }
+      }
+      for (let i = 0; i < stringArray.length; i++) {
+        if (stringArray[i] === max) {
+          ind.push(i)
+        }
+      }
+      alert(max + '、' + max_num + '、' + ind)
+    }
+    var arr = ["This", "is", "a", "nice", "job"];
+    var str = "";
+    // arr.forEach((e, i, o) => {
+    //   str += e + " "
+    // });
+    arr = arr.join(" ")
+
+    var arr = [];
+    for (let i = 0; i < 1000; i++) {
+      arr.push(i * 2)
+    }
+    var half = Math.floor(arr.length / 2)
+    var max = arr.length - 1;
+    var min = 0;
+    var count = 0;
+    function halfFind(num) {
+
+      while (true) {
+        half = Math.floor((min + max) / 2)
+        count++;
+        if (arr[half] < num) {
+          min = half;
+        } else if (arr[half] > num) {
+          max = half
+        }
+        else if (num == arr[half]) {
+          console.log(arr[half])
+          console.log(half)
+          console.log(count)
+          break
+        }
+      }
+    }
+
+    function bubble() {
+      var arr = [43, 212, 45, 2, 3, 66, 23, 34]
+      for (let i = 0; i < arr.length - 1; i++) {
+        for (let j = 0; j < arr.length; j++) {
+          if (arr[j] > arr[j + 1]) {
+            var temp = arr[j]
+            arr[j] = arr[j + 1]
+            arr[j + 1] = temp
+          }
+        }
+      }
+      console.log(arr)
+    }
+    var sum = 0
+    function recursive() {
+      sum++;
+      console.log(sum)
+      if (sum == 10) {
+        return
+      }
+      recursive()
+    }
+    recursive()
+  </script>
+</body>
+
+</html>
