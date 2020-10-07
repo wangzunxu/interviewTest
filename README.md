@@ -11,3 +11,9 @@
 5.gitignore
 
 5.远端分支
+//配置远端仓库
+git remote add origin https://gitee.com/kingCould/HelloWord.git
+//开始推送
+git push <远程主机名> <本地分支名>:<远程分支名>
+
+git push origin master:master
